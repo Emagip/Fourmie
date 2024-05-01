@@ -3,8 +3,6 @@ import matplotlib.pyplot as plt
 from tkinter import *
 import numpy as np
 
-# commit de test
-
 interface = Tk()
 
 interface.title("Bienvenue chez les ch'ti")
