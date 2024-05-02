@@ -1,4 +1,7 @@
 def getWhereCanGo(line, col):
+    """prend en entrée la position relative de la fourmie sur le plateau
+    renvoi une liste de tuples correspondant
+    aux mouvements possibles de la fourmie"""
     can_go_to = []
 
     if col == 0:
@@ -22,6 +25,8 @@ def getWhereCanGo(line, col):
 
 
 def GetCoords(coords_in):
+    """prend en entrée la position relative de la fourmie sur le plateau
+    renvoi les coordonnées tk y correspondant"""
     coords_out = (
         100 + (200 * coords_in[0]),
         100 + (200 * coords_in[1])
@@ -30,6 +35,10 @@ def GetCoords(coords_in):
 
 
 def set():
+    """ne prend rien en entree
+    renvoie une liste de listes de dictionnaires correspondant au plateau
+    chaques sous-listes correspondant a une ligne,
+    chaques dictionnaires correspondant a une case"""
     plateau = []
     HasCandy = False
     for i in range(5):
