@@ -26,7 +26,7 @@ def recupere_bonbon(fourmieAsBonbon, coords):
 
 def pose_bonbon(CaseHautBonbon, coords, fourmieAsBonbon):
     """Fonction permettant a la fourmie de poser un bonbon
-    prend en input :
+    prend en entrée :
         la valeur actuelle de CaseHautBonbon
         la valeur actuelle de fourmieAsBonbon
         les coordonnées actuelle de la fourmie
