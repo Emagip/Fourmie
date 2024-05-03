@@ -1,10 +1,9 @@
 from simul_sans_tk import *
 import simul_tk_v2 as simu
-
+ 
 
 import matplotlib.pyplot as plt
 from tkinter import *
-import numpy as np
 
 
 
