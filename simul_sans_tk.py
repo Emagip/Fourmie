@@ -36,7 +36,7 @@ def pose_bonbon(CaseHautBonbon, coords, fourmieAsBonbon):
     return fourmieAsBonbon
 
 
-def main():
+def main_sans_tk():
     """Boucle principale pour la simulation de la fourmie
     ne prend pas d'arguments et renvoie le compteur de mouvements"""
     global plateau
