@@ -7,31 +7,31 @@ from Cases import *
 interface = Tk()
 
 interface.title("Bienvenue chez les ch'ti")
-interface.config(bg='black')
+interface.config(bg='#d6eaf8')
 
-Cadre = Canvas(interface,bg="white",width=1000, height = 1000)
-Fond = Canvas(interface,bg="Black",width=1000, height = 1000)
+Cadre = Canvas(interface,bg="#7fb3d5",width=500, height = 500)
+Fond = Canvas(interface,bg="#d6eaf8",width=1000, height = 1000)
 
 def echequier():
     """Fonction qui affiche l'échéquier sur lequel la fourmie se déplace à l'écran"""
-    for i in range(0,1000,400): #création de l'echequier
-        for j in range(0,1000,400):
-            Rect = Cadre.create_rectangle(j,i,j+200,i+200, fill='blue')
-            Rect = Cadre.create_rectangle(i+200,j+200,i+400,j+400, fill='blue')
+    for i in range(0,500,200): #création de l'echequier
+        for j in range(0,500,200):
+            Rect = Cadre.create_rectangle(j,i,j+100,i+100, fill='#3498db')
+            Rect = Cadre.create_rectangle(i+100,j+100,i+200,j+200, fill='#3498db')
 def set_bonbon():
     """récupère l'image des bonbons et les affiche sur les cases du bas"""
     global Bonbon, Cadre_bonbon
     Cadre_bonbon = []
     Bonbon = PhotoImage(file="bonbon.png")
-    for i in range(100,901, 200):  #ajout des bonbons
-        Cadre_bonbon.append(Cadre.create_image(i, 900,image=Bonbon))
+    for i in range(50,451, 100):  #ajout des bonbons
+        Cadre_bonbon.append(Cadre.create_image(i, 450,image=Bonbon))
 
 def set_fourmie():
     """ récupère l'image de la fourmie et l'affiche au centre de l'échequier"""
     global Cadre_fourmie, Fourmie
     Fourmie = PhotoImage(file="fourmie.png") 
     
-    Cadre_fourmie = Cadre.create_image(500, 500, image=Fourmie)#ajout de la fourmie
+    Cadre_fourmie = Cadre.create_image(250, 250, image=Fourmie)#ajout de la fourmie
 
 def import_fourmie_bonbon():
     """ récupère l'image de la fourmie qui porte un bonbon sans l'afficher"""
