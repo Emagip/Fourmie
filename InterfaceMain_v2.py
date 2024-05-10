@@ -5,21 +5,34 @@ from tkinter import *
 
 
 def graphique():
-    '''créer un graphique du nombre de mouvement, nb mouv, en fonction du nombre de simulation, nb_simu. 
-    Sur le graphique apparait également la moyenne des mouvment de la fourmie et le temps qu'une simulation a prise
+    '''créer un graphique du nombre de mouvement par le nombre de simulation.
+    Sur le graphique apparait également la moyenne des mouvment de la fourmie
+    et la duree d'une simulation
     '''
-    plt.plot(nb_simu, nb_mouv, "bo--", label="nombre de mouvements")
-    plt.plot(nb_simu, moy_len, "-", color="green", label="Moyenne au cour du temps")
-    plt.plot([0, len(nb_simu)], [moyenne(), moyenne()], "r-", label=f"Moyenne finnale: {moyenne()}")
+    plt.plot(nb_simu, nb_mouv,
+             "bo--",
+             label="nombre de mouvements"
+             )
+    plt.plot(nb_simu, moy_len,
+             "-", color="green",
+             label="Moyenne au cour du temps"
+             )
+    plt.plot([0, len(nb_simu)],
+             [moyenne(), moyenne()],
+             "r-",
+             label=f"Moyenne finnale: {moyenne()}"
+             )
     plt.legend(loc='upper right')
     plt.ylabel("nombre de mouvement par simulation")
     plt.xlabel("nombre de simulation faite")
     plt.show()
 
+
 def moyenne():
-    '''calcul la moyenne du nombre de mouvment fait par rapport au nombre de simulations'''
-    moy = round(mouv/simuls, 2)
+    '''calcul la moyenne du nombre de mouvment par le nombre de simulations'''
+    moy = round(mouv / simuls, 2)
     return moy
+
 
 def submit_vitesse():
     '''la fonction permet de prendre en compte les valeurs mises dans les cases dédier sur l'interface de jeu
@@ -30,13 +43,14 @@ def submit_vitesse():
     simu.delay = vitesses[delayval]
     print('vitesse de la fourmi = ',simu.delay)
 
+
 def submit_simul():
     '''la fonction permet de prendre en compte les valeurs mises dans les cases dédier sur l'interface de jeu
     et de les donner au bonne variables, simuls prend le nombre de simulations à faire'''
     global simuls
     simuls = simu_var.get()
     print('nb simulations = ',simuls,)
-    
+
 
 def combien_de_simu():
     '''fonction qui créer les boutons pour pouvoir donner le nombre de simulations voulu'''
@@ -46,6 +60,7 @@ def combien_de_simu():
     simu_label.grid(row=4,column=0)
     simu_entry = Entry(simu.Fond, textvariable= simu_var)
     simu_entry.grid(row=5,column=0)
+
 
 def vitesseFourmi():
     '''fonction qui créer les boutons pour pouvoir donner la vitesse voulu'''
@@ -58,6 +73,7 @@ def vitesseFourmi():
     vitesse_entry = Entry(simu.Fond, textvariable= vitesse_var)
     vitesse_entry.grid(row=2,column=0)
 
+
 def detruire_btn_vitesse():
     '''fonction qui détruit les boutons temporaire pour la vitesse'''
     vitesse_entry.destroy()
@@ -65,11 +81,13 @@ def detruire_btn_vitesse():
     vitesse_label2.destroy()
     JeuAffichage.config(text='Lancer une simulation avec interface graphique', command = MiseEnPlaceTK)
 
+
 def detruire_btn_simu():
     '''fonction qui détruit les boutons temporaire pour le nombre simulations'''
     simu_entry.destroy()
     simu_label.destroy()
     JeuGraphique.config(text='Lancer plusieurs simulations et obtenir des statistics',command=simuSansTK)
+
 
 def stats():
     '''fonction qui utilise la fonction moyenne, graphique et de main_sans_tk pour faire un graphique avec le nombre de simulations et le nombre de
@@ -93,16 +111,19 @@ def stats():
     print("moyenne :", moyenne())
     graphique()
 
+
 def simuSansTK():
     '''lance les fonctions permettant de faire des simulations sans interface et avoir toutes les statistics derrière'''
     global simuls
     combien_de_simu()
     JeuGraphique.config(text='valider',command=stats)
 
+
 def MiseEnPlaceTK():
     '''execute le programme main_tk qui est l'interface graphique du jeu'''
     vitesseFourmi()
     JeuAffichage.config(text='valider', command=simuTK)
+
 
 def simuTK():
     '''execute le programme main_tk qui est l'interface graphique du jeu'''
@@ -111,6 +132,7 @@ def simuTK():
     simu.main_tk()
     detruire_btn_vitesse()
 
+
 #création des boutton principaux1
 JeuAffichage = Button(simu.Fond,text='Lancer une simulation avec interface graphique', command = MiseEnPlaceTK)
 JeuAffichage.grid(row=3,column=0)
@@ -118,6 +140,7 @@ JeuGraphique = Button(simu.Fond,text='Lancer plusieurs simulations et obtenir de
 JeuGraphique.grid(row=6,column=0)
 Quitter = Button(simu.Fond,text='Quitter le jeu', command=simu.interface.destroy)
 Quitter.grid(row=7,column=0)
+
 
 simu.Fond.pack()
 simu.interface.mainloop()
