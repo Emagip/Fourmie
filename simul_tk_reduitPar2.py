@@ -9,15 +9,15 @@ interface = Tk()
 interface.title("Bienvenue chez les ch'ti")
 interface.config(bg='#d6eaf8')
 
-Cadre = Canvas(interface,bg="#7fb3d5",width=500, height = 500)
+Cadre = Canvas(interface,bg="white",width=500, height = 500)
 Fond = Canvas(interface,bg="#d6eaf8",width=1000, height = 1000)
 
 def echequier():
     """Fonction qui affiche l'échéquier sur lequel la fourmie se déplace à l'écran"""
     for i in range(0,500,200): #création de l'echequier
         for j in range(0,500,200):
-            Rect = Cadre.create_rectangle(j,i,j+100,i+100, fill='#3498db')
-            Rect = Cadre.create_rectangle(i+100,j+100,i+200,j+200, fill='#3498db')
+            Rect = Cadre.create_rectangle(j,i,j+100,i+100, fill='blue')
+            Rect = Cadre.create_rectangle(i+100,j+100,i+200,j+200, fill='blue')
 def set_bonbon():
     """récupère l'image des bonbons et les affiche sur les cases du bas"""
     global Bonbon, Cadre_bonbon
