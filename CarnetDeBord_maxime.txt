@@ -1,0 +1,26 @@
+Semaine du 29 Mars :
+	création des premières structures de données pour la gestion du plateau et répartition des rôles
+
+Semaine du 2 avril :
+	finition de la première version du plateau et premiéres bases de l'interface en TK
+
+Semaine du 9 avril :
+	Première version du plateau finie 
+	changement du système de position de la fourmie encodé par des dictionnaires pour des direction données par de Tuples
+	premiére interface "fonctionnelle"
+
+Semaine du 16 avril (Vacances) :
+	corrections dans le code TK de Victor, mise en global de certaines variables
+	premiére version vraiment finie (le tout)
+
+Semaine du 22 avril (Vacances) :
+	rien pour ma part
+
+Semaine du 30 avril :
+	dernier petits ajustements sur le plateau
+	création d'une version de la simulation sans les éléments de Tk pour permettre a fabian de faire des graphiques sur plusieurs simulations
+	modification des graphiques de Fabian, ajout d'une légende et de l'évolution de la moyenne au cours du temps.
+
+Semaine du 7 mai :
+	Derniére touches sur tout les codes (pour ma part)
+	modification de lisibilité et corrections des bourdes et autres fautes d'orthographes de Fabian
