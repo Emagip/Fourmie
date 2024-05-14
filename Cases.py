@@ -28,6 +28,7 @@ def GetCoords(coords_in):
     )
     return coords_out
 
+
 def set():
     plateau = []
     HasCandy = False
