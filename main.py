@@ -35,7 +35,7 @@ def submit_vitesse():
     '''la fonction permet de prendre en compte les valeurs mises dans les cases dédier sur l'interface de jeu
     et de les donner au bonne variables delay prend le temps qu'il faut attendre entre chaque mouvement de la fourmie '''
     vitesse_var
-    vitesses = [0.1,
+    vitesses = [0.0,
                 0.01,
                 0.001,
                 0.0001]
